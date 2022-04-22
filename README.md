@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+This  Project uses all the basic concept of Redux.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To Learn Redux we need to know about
 
-## Available Scripts
+1.Reducers ---it is nothing are functions that take the current state and an action as arguments and return a new state result(without modifying the state ex. state = state + action.payload; // don't modify the original state). 
+In other words, (state, action) => newState.
 
-In the project directory, you can run:
+2.Actions---An action is an object sent to the store.must have type property
 
-### `npm start`
+Now first create a store to store the data like:
+step 1. import { createStore } from "redux";
+step 2.create a reducer like---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+const reducer = (state = 0, action) => {
+   if (action.type == "INCREMENT") return state + action.payload;
+   if (action.type == "DECREMENT") return state - action.payload;
+   return state;
+ };
+ 
+ step 3. const store = createStore(reducer); //this will create a store
+ 
+ step 4. store.dispatch({
+  type: "INCREMENT",
+  payload: 5,
+});
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+store.dispatch({
+  type: "DECREMENT",
+ payload: 2,
+ });
+ //the object we are passing in dispatch function is action 
+ 
+ to user the in different component we user Provider function to pass the store and use connect function to access the store
+ 
+ like: <Provider store={store}>
+    <App />
+  </Provider>
+  
+  Dependecies to be install :
+  1.redux
+  2.react-redux
+  3.react-router-dom
+  4.uuid
+  
+  Looks like
+  ![Screenshot (1237)](https://user-images.githubusercontent.com/52390883/164606211-7a4fcf5d-c4bf-4222-adb4-fbf4b77c2b29.png)
 
-### `npm test`
+  ![Screenshot (1238)](https://user-images.githubusercontent.com/52390883/164606050-18266b1b-4091-44aa-aa91-e777507b9d35.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ App is live on:
+ https://satyendra1997.github.io/redux_basic_concept/
