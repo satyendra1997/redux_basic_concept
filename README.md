@@ -30,7 +30,7 @@ store.dispatch({
  });
  //the object we are passing in dispatch function is action 
  
- to user the in different component we use Provider function to pass the store and use connect function to access the store
+ to use store  in different component we use Provider function to pass the store and use connect function to access the store
  
  like: <Provider store={store}>
     <App />
