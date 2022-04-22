@@ -2,7 +2,7 @@ This  Project uses all the basic concept of Redux.
 
 To Learn Redux we need to know about
 
-1.Reducers ---it is nothing are functions that take the current state and an action as arguments and return a new state result(without modifying the state ex. state = state + action.payload; // don't modify the original state). 
+1.Reducers ---it is nothing but functions that take the current state and an action as arguments and return a new state result(without modifying the state ex. state = state + action.payload; // don't modify the original state). 
 In other words, (state, action) => newState.
 
 2.Actions---An action is an object sent to the store.must have type property
@@ -30,7 +30,7 @@ store.dispatch({
  });
  //the object we are passing in dispatch function is action 
  
- to user the in different component we user Provider function to pass the store and use connect function to access the store
+ to user the in different component we use Provider function to pass the store and use connect function to access the store
  
  like: <Provider store={store}>
     <App />
