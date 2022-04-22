@@ -1,15 +1,15 @@
 This  Project uses all the basic concept of Redux.
 
-To Learn Redux we need to know about
+To Learn Redux we need to know about<br/>
 
 1.Reducers ---it is nothing but functions that take the current state and an action as arguments and return a new state result(without modifying the state ex. state = state + action.payload; // don't modify the original state). 
-In other words, (state, action) => newState.
+In other words, (state, action) => newState.<br/>
 
-2.Actions---An action is an object sent to the store.must have type property
+2.Actions---An action is an object sent to the store.must have type property<br/>
 
-Now first create a store to store the data like:
-step 1. import { createStore } from "redux";
-step 2.create a reducer like---
+Now first create a store to store the data like:<br/>
+step 1. import { createStore } from "redux";<br/>
+step 2.create a reducer like---<br/>
 
 const reducer = (state = 0, action) => {
    if (action.type == "INCREMENT") return state + action.payload;
@@ -17,13 +17,13 @@ const reducer = (state = 0, action) => {
    return state;
  };
  
- step 3. const store = createStore(reducer); //this will create a store
+ step 3. const store = createStore(reducer); //this will create a store<br/>
  
  step 4. store.dispatch({
   type: "INCREMENT",
   payload: 5,
 });
-
+<br/>
 store.dispatch({
   type: "DECREMENT",
  payload: 2,
@@ -35,7 +35,7 @@ store.dispatch({
  like: <Provider store={store}>
     <App />
   </Provider>
-  
+  <br/>
   Dependecies to be install :
   1.redux
   2.react-redux
